@@ -1,0 +1,32 @@
+apply plugin: 'java'
+
+//shadowJar
+apply plugin: "com.github.johnrengelman.shadow"
+
+group project_group_id
+version '1.0'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+//encoding
+[compileJava, compileTestJava, javadoc]*.options*.encoding = "UTF-8"
+
+jar {
+    baseName = 'classes-duplication-check'
+    version = '1.0'
+    manifest {
+        attributes  'Manifest-Version': 1.0,
+                    'Main-Class': 'com.github.shepherdviolet.classesduplicationcheck.Main'
+    }
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+//    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+//    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

@@ -1,0 +1,29 @@
+
+//构建脚本配置
+buildscript {
+
+    //装载其他配置文件
+    ext {
+        def customProperties = new Properties()
+        file("gradle-project.properties").withInputStream { stream -> customProperties.load(stream) }
+        customProperties.each {
+            project.extensions.add("$it.key",it.value)
+        }
+    }
+
+    //构建脚本依赖仓库
+    repositories {
+        jcenter()
+        mavenCentral()
+//        maven { url 'https://jitpack.io' }
+    }
+
+    //构建脚本依赖
+    dependencies {
+        classpath "com.github.jengelman.gradle.plugins:shadow:5.1.0" // 重要: 打包插件 这个在jcenter(其实在https://repo.spring.io/plugins-release/)
+    }
+
+}
+
+//工程配置
+apply from: 'build-project.gradle'
