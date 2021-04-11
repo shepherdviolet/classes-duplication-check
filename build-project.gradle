@@ -21,6 +21,14 @@ jar {
     }
 }
 
+shadowJar {
+    // 最小化(剔除不用的类)
+    minimize {}
+    // 修改依赖包的类路径
+    relocate('sviolet.thistle', 'com.github.shepherdviolet.classesduplicationcheck.libs.sviolet.thistle') {}
+    relocate('com.github.shepherdviolet.glaciion', 'com.github.shepherdviolet.classesduplicationcheck.libs.com.github.shepherdviolet.glaciion') {}
+}
+
 repositories {
     jcenter()
     mavenCentral()
@@ -28,5 +36,5 @@ repositories {
 }
 
 dependencies {
-//    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation "com.github.shepherdviolet:thistle-common:$version_thistle"
 }
