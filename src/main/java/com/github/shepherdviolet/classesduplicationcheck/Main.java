@@ -25,37 +25,40 @@ public class Main {
         try (ClassesDuplicationChecker checker = new ClassesDuplicationChecker(".")) {
             checker.check();
 
-            SimpleLogger.print("\n==============================================================================================");
+            SimpleLogger.print("\r\n==============================================================================================");
             SimpleLogger.print("Overview");
             SimpleLogger.print("==============================================================================================");
 
             for (ClassesDuplicationChecker.JarDuplicationInfo duplicationInfo : checker.getDuplicatedJars().values()) {
                 StringBuilder logBuilder = new StringBuilder();
                 for (Map.Entry<String, Integer> entry : duplicationInfo.getDuplicatedFiles().entrySet()) {
-                    logBuilder.append(entry.getKey())
+                    logBuilder.append("  ")
+                            .append(entry.getKey())
                             .append(" (")
                             .append(entry.getValue())
-                            .append(" classes) ");
+                            .append(" classes)  --");
                 }
-                logBuilder.append("  -->  duplicated classes: ")
-                        .append(duplicationInfo.getDuplicatedClasses().size());
+                logBuilder.append(">  duplicated: ")
+                        .append(duplicationInfo.getDuplicatedClasses().size())
+                        .append(" classes");
                 SimpleLogger.print(logBuilder.toString());
             }
 
-            SimpleLogger.print("\n==============================================================================================");
+            SimpleLogger.print("\r\n==============================================================================================");
             SimpleLogger.print("Details");
             SimpleLogger.print("==============================================================================================");
 
             for (ClassesDuplicationChecker.JarDuplicationInfo duplicationInfo : checker.getDuplicatedJars().values()) {
 
-                SimpleLogger.print("\n-----------------------------------------------------------------");
+                SimpleLogger.print("\r\n-----------------------------------------------------------------");
 
-                StringBuilder logBuilder = new StringBuilder("Duplication between: ");
+                StringBuilder logBuilder = new StringBuilder("Duplication between:");
                 for (Map.Entry<String, Integer> entry : duplicationInfo.getDuplicatedFiles().entrySet()) {
-                    logBuilder.append(entry.getKey())
+                    logBuilder.append("  ")
+                            .append(entry.getKey())
                             .append(" (")
                             .append(entry.getValue())
-                            .append(" classes) ");
+                            .append(" classes)  --");
                 }
 
                 SimpleLogger.print(logBuilder.toString());
@@ -67,7 +70,7 @@ public class Main {
 
             }
 
-            SimpleLogger.print("\n==============================================================================================");
+            SimpleLogger.print("\r\n==============================================================================================");
             SimpleLogger.print("Finished");
             SimpleLogger.print("==============================================================================================");
 
