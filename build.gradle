@@ -13,14 +13,14 @@ buildscript {
 
     //构建脚本依赖仓库
     repositories {
-        jcenter()
         mavenCentral()
+        maven { url 'https://plugins.gradle.org/m2/' }
 //        maven { url 'https://jitpack.io' }
     }
 
     //构建脚本依赖
     dependencies {
-        classpath "com.github.jengelman.gradle.plugins:shadow:5.1.0" // 重要: 打包插件 这个在jcenter(其实在https://repo.spring.io/plugins-release/)
+        classpath "com.github.jengelman.gradle.plugins:shadow:5.2.0" // 重要: 打包插件 这个在jcenter(其实在https://repo.spring.io/plugins-release/)
     }
 
 }
