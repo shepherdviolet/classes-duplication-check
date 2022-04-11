@@ -1,6 +1,6 @@
 package com.github.shepherdviolet.classesduplicationcheck;
 
-import sviolet.thistle.util.conversion.DateTimeUtils;
+import com.github.shepherdviolet.glacimon.java.misc.DateTimeUtils;
 
 import java.util.Map;
 

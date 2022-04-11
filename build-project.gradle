@@ -25,16 +25,16 @@ shadowJar {
     // 最小化(剔除不用的类)
     minimize {}
     // 修改依赖包的类路径
-    relocate('sviolet.thistle', 'com.github.shepherdviolet.classesduplicationcheck.libs.sviolet.thistle') {}
-    relocate('com.github.shepherdviolet.glaciion', 'com.github.shepherdviolet.classesduplicationcheck.libs.com.github.shepherdviolet.glaciion') {}
+    relocate('com.github.shepherdviolet.glacimon', 'com.github.shepherdviolet.classesduplicationcheck.libs.com.github.shepherdviolet.glacimon') {}
 }
 
 repositories {
+    maven { url repository_localRepositoryPath } // 本地仓库, 可选
     jcenter()
     mavenCentral()
 //    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    implementation "com.github.shepherdviolet:thistle-common:$version_thistle"
+    implementation "com.github.shepherdviolet.glacimon:glacijava-common:2022.0.0"
 }

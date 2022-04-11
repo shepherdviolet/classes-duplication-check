@@ -1,9 +1,9 @@
 package com.github.shepherdviolet.classesduplicationcheck;
 
-import sviolet.thistle.util.common.CloseableUtils;
-import sviolet.thistle.util.concurrent.ThreadPoolExecutorUtils;
-import sviolet.thistle.util.conversion.DateTimeUtils;
-import sviolet.thistle.util.conversion.StringUtils;
+import com.github.shepherdviolet.glacimon.java.concurrent.ThreadPoolExecutorUtils;
+import com.github.shepherdviolet.glacimon.java.conversion.StringUtils;
+import com.github.shepherdviolet.glacimon.java.misc.CloseableUtils;
+import com.github.shepherdviolet.glacimon.java.misc.DateTimeUtils;
 
 import java.io.*;
 import java.nio.charset.Charset;

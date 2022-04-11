@@ -1,6 +1,6 @@
 package com.github.shepherdviolet.classesduplicationcheck;
 
-import sviolet.thistle.util.judge.CheckUtils;
+import com.github.shepherdviolet.glacimon.java.misc.CheckUtils;
 
 import java.io.File;
 import java.util.*;
